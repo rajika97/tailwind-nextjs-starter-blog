@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: "Rajika's Blog",
-  author: 'Rajika Chathuranga',
+  title: 'built with tailwind-nextjs-starter-blog',
+  // author: '',
   headerTitle: 'Rajika',
   description:
     "Hey there! Full-stack dev here, obsessed with building awesome web apps. This blog is my playground for exploring both sides of the coding force - front-end magic and back-end wizardry. Whether you're a seasoned pro or just starting out, join me on this wild ride as we tackle everything from React to Node.js and beyond! Let's get coding!",
