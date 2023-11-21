@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'built with tailwind-nextjs-starter-blog',
+  title: "Rajika's Blog",
   // author: '',
   headerTitle: 'Rajika',
   description:

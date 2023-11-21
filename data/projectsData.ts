@@ -1,11 +1,9 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Promptium - Your AI Prompt Oasis! 🤖',
+    description: `Welcome to Promptium - a straightforward CRUD application built with NEXT.JS.`,
+    imgSrc: '/static/images/Promptium-Cover.jpg',
+    href: '/blog/Promptium - Your AI Prompt Oasis',
   },
   {
     title: 'The Time Machine',

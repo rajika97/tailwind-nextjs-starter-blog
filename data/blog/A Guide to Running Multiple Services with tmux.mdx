@@ -1,0 +1,100 @@
+---
+title: A Guide to Running Multiple Services with tmux
+date: '2023-11-20'
+tags: ['tmux', 'microservices', 'NodeJS']
+draft: false
+summary: Streamline the management of multiple NodeJS microservices with the powerful terminal multiplexer, tmux, for efficient organization and monitoring in a single terminal window
+images: []
+---
+
+## Introduction:
+
+In the ever-evolving landscape of microservices architecture, efficient management and deployment are crucial. NodeJS has become a popular choice for building microservices due to its scalability and flexibility. In this article, we'll explore a powerful tool, tmux, and discover how it can streamline the process of running multiple NodeJS microservices.
+
+## What is tmux?
+
+Tmux, short for terminal multiplexer, is a command-line tool that enables you to split your terminal into multiple panes, allowing you to run different commands simultaneously. It's a game-changer for developers working on complex projects, and it's especially useful for managing microservices.
+
+## Setting up tmux:
+
+If you don't have tmux installed, you can install it using your package manager. For example, on a Debian-based system, you can run:
+
+```bash
+
+sudo apt-get install tmux
+
+```
+
+Once installed, fire up tmux by simply typing:
+
+```bash
+
+tmux
+
+```
+
+## Running NodeJS microservices:
+
+Assuming you have multiple NodeJS microservices in different directories, you can use tmux to run each service in a separate pane. Let's say you have three microservices: `service1`, `service2`, and `service3`.
+
+1.  Create a new tmux session:
+
+```bash
+
+tmux new-session -s my_microservices
+
+```
+
+2. Split the terminal horizontally:
+
+Press `Ctrl-b` followed by `%` to split the terminal into two horizontal panes.
+
+3. Navigate to the first directory and start the first microservice:
+
+```bash
+
+cd path/to/service1
+
+npm start
+
+```
+
+4. Split the second pane vertically:
+
+Press `Ctrl-b` followed by `"` to split the second pane into two vertical panes.
+
+5. Navigate to the second directory and start the second microservice:
+
+```bash
+
+cd path/to/service2
+
+npm start
+
+```
+
+6. Switch to the third pane and start the third microservice:
+
+```bash
+
+cd path/to/service3
+
+npm start
+
+```
+
+7. To navigate between panes, you can use `Ctrl-b` followed by an arrow key.
+
+## Detaching and reattaching:
+
+If you need to disconnect from the tmux session but keep your microservices running, you can detach by pressing `Ctrl-b` followed by `d`. To reattach later, use:
+
+```bash
+
+tmux attach-session -t my_microservices
+
+```
+
+## Conclusion:
+
+Running multiple NodeJS microservices doesn't have to be a headache. With tmux, you can easily organize, monitor, and manage your services in a single terminal window. This approach enhances your development workflow, making it more efficient and organized. Give tmux a try, and empower your NodeJS microservices development today.Title: Empowering Your NodeJS Microservices: A Guide to Running Multiple Services with tmux
