@@ -1,0 +1,75 @@
+---
+title: How to Create a Class Diagram from a Use Case Scenario
+date: '2023-12-05'
+tags: ['UML']
+draft: false
+---
+
+## Example Use Case Scenario: Booking a Hotel Room
+
+### Use Case Details:
+
+**Use Case:** Book a hotel room
+
+**Actor:** Hotel guest
+
+**Preconditions:**
+
+- The hotel guest has a valid account with the hotel's online booking system.
+- The hotel has availability for the desired dates and room type.
+
+### Basic Flow:
+
+1. The hotel guest logs into the hotel's online booking system.
+2. The hotel guest enters their desired check-in and check-out dates.
+3. The hotel guest selects the number of adults and children in their party.
+4. The hotel guest selects the desired room type.
+5. The hotel guest reviews the room information and price.
+6. The hotel guest enters their payment information.
+7. The hotel guest clicks the "Book Now" button.
+8. The hotel system confirms the booking and sends an email confirmation to the hotel guest.
+
+## Step 1: Create a Domain Model with Classes, Attributes, and Associations
+
+### Nouns as Classes:
+
+- HotelGuest
+- HotelBookingSystem
+- Room
+- Payment
+- EmailConfirmation
+
+### Properties as Attributes:
+
+- HotelGuest: account, name
+- HotelBookingSystem: availability
+- Room: type, information, price
+- Payment: information
+- EmailConfirmation: confirmationDetails
+
+### Verbs as Relationships:
+
+- HotelGuest logs into HotelBookingSystem
+- HotelBookingSystem has availability for Room
+- HotelGuest selects Room
+- HotelGuest reviews Room
+- HotelGuest enters Payment
+- HotelBookingSystem confirms and sends EmailConfirmation to HotelGuest
+
+### Class Diagram (without methods):
+
+![Step 1 Image](/static/images/uml/step1.png)
+
+## Step 2: Discover Methods by Modeling Interaction among Classes (Sequence Diagram)
+
+_Creating a sequence diagram for the basic flow interactions._
+
+![Step 2 Image](/static/images/uml/step2.png)
+
+## Step 3: Add Discovered Methods into the Class Diagram
+
+### Updated Class Diagram with Methods:
+
+![Step 3 Image](/static/images/uml/step3.png)
+
+In this final class diagram, methods discovered during the sequence diagram creation have been added to the respective classes. The diagram now includes more details about the interactions and behaviors of the classes in the context of the "Book a hotel room" use case.
