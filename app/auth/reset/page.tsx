@@ -29,12 +29,15 @@ const ResetPage = () => {
 
     setLoading(true)
     try {
-      await axios.post('http://localhost:8080/api-auth/password/reset/confirm/', {
-        new_password1: password,
-        new_password2: password,
-        uid: uid,
-        token: token,
-      })
+      await axios.post(
+        'https://studynote-mpd33.ondigitalocean.app/api-auth/password/reset/confirm/',
+        {
+          new_password1: password,
+          new_password2: password,
+          uid: uid,
+          token: token,
+        }
+      )
 
       setMessage('Password has been reset successfully.')
       // Redirect to the installed app via deep link
