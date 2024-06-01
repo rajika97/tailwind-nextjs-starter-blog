@@ -29,7 +29,7 @@ const ResetPage = () => {
 
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:8080/api-auth/password/reset/confirm/', {
+      await axios.post('http://localhost:8080/api-auth/password/reset/confirm/', {
         new_password1: password,
         new_password2: password,
         uid: uid,
