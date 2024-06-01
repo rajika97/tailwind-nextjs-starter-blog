@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter, useSearchParams } from 'next/navigation'
 import axios from 'axios'
 
 const ResetPage = () => {
@@ -10,13 +10,15 @@ const ResetPage = () => {
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const { token, uid } = router.query
+  const searchParams = useSearchParams()
+  const uid = searchParams.get('uid')
+  const token = searchParams.get('token')
 
   useEffect(() => {
-    if (!token || !uid) {
+    if (!uid || !token) {
       setMessage('Invalid password reset link.')
     }
-  }, [token, uid])
+  }, [uid, token])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -27,12 +29,15 @@ const ResetPage = () => {
 
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:8080/api-auth/password/reset/confirm/', {
-        new_password1: password,
-        new_password2: password,
-        uid: uid, // Use uid from the query parameters
-        token: token, // Use token from the query parameters
-      })
+      const response = await axios.post(
+        'https://studynote-mpd33.ondigitalocean.app/api-auth/password/reset/confirm/',
+        {
+          new_password1: password,
+          new_password2: password,
+          uid: uid,
+          token: token,
+        }
+      )
 
       setMessage('Password has been reset successfully.')
       // Redirect to the installed app via deep link
